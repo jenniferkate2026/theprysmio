@@ -1,0 +1,57 @@
+name: Import PRYSM iO source
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-prysm-source.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download verified PRYSM iO source archive
+        run: |
+          curl --fail --location --retry 3 \
+            'https://agent-6a97337f36c9eb7a17febb71--theprysmio.netlify.app/prysm-io-source.zip' \
+            --output /tmp/prysm-io-source.zip
+          test -s /tmp/prysm-io-source.zip
+
+      - name: Extract source safely
+        run: |
+          rm -rf /tmp/prysm-src
+          mkdir -p /tmp/prysm-src
+          unzip -q /tmp/prysm-io-source.zip -d /tmp/prysm-src
+          test -f /tmp/prysm-src/package.json
+          test -f /tmp/prysm-src/netlify.toml
+          test -d /tmp/prysm-src/src
+          test -d /tmp/prysm-src/public
+
+      - name: Copy application source into repository
+        run: |
+          cp -f /tmp/prysm-src/netlify.toml ./netlify.toml
+          cp -f /tmp/prysm-src/package.json ./package.json
+          cp -f /tmp/prysm-src/package-lock.json ./package-lock.json
+          cp -f /tmp/prysm-src/tsconfig.json ./tsconfig.json
+          cp -f /tmp/prysm-src/vite.config.ts ./vite.config.ts
+          rm -rf ./src ./public
+          cp -R /tmp/prysm-src/src ./src
+          cp -R /tmp/prysm-src/public ./public
+
+      - name: Commit imported source
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add netlify.toml package.json package-lock.json tsconfig.json vite.config.ts src public
+          if git diff --cached --quiet; then
+            echo 'No source changes to commit.'
+          else
+            git commit -m 'Import complete PRYSM iO source from Netlify workspace'
+            git push
+          fi
