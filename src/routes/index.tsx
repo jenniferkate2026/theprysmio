@@ -18,6 +18,8 @@ export const Route = createFileRoute('/')({
   component: PrysmPage,
 })
 
+const prysmBuyUrl = 'https://www.nuskin.com/us/en/mysite/jenniferkate/product/prysm-io-consumer-edition'
+
 const navItems = [
   ['What it does', '#what-it-does'],
   ['How it works', '#how-it-works'],
@@ -148,6 +150,7 @@ function PrysmPage() {
           <div className="hero-actions">
             <button className="button-primary" onClick={() => scrollTo('#what-it-does')}>Discover Prysm iO <ArrowDown size={15} /></button>
             <button className="button-secondary" onClick={() => scrollTo('#contact')}>Talk to Jennifer</button>
+            <a className="button-secondary" href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">Buy PRYSM iO <ArrowRight size={14} /></a>
           </div>
         </div>
 
@@ -289,17 +292,36 @@ function PrysmPage() {
         </div>
 
         <div className="form-wrap">
+          <a className="button-secondary purchase-link" href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">Buy your PRYSM iO on my Nu Skin site <ArrowRight size={14} /></a>
+          <p className="form-intro">Curious? Tell me what you’d like to know, and I’ll follow up.</p>
           {formState === 'sent' ? (
             <div className="form-message"><Check /><span>TRANSMISSION RECEIVED</span><h3>Thank you.</h3><p>Jennifer has your note and will be in touch shortly.</p><button onClick={() => setFormState('idle')}>Send another</button></div>
           ) : (
             <form name="prysm-inquiry" onSubmit={submitForm}>
               <input type="hidden" name="form-name" value="prysm-inquiry" />
+              <input type="hidden" name="source" value="PRYSM iO website" />
               <p className="hidden-field"><label>Do not fill this out<input name="bot-field" /></label></p>
               <label><span>YOUR NAME</span><input name="name" placeholder="Name" required /></label>
               <label><span>EMAIL ADDRESS</span><input type="email" name="email" placeholder="you@example.com" required /></label>
-              <label><span>YOUR MESSAGE</span><textarea name="message" rows={4} placeholder="Tell me about your wellness goals..." required /></label>
+              <label><span>PHONE NUMBER (OPTIONAL)</span><input type="tel" name="phone" placeholder="Add a number for a call or text" /></label>
+              <label><span>PREFERRED CONTACT</span><select name="preferred_contact" required defaultValue="">
+                <option value="" disabled>Choose one</option>
+                <option value="Email">Email</option>
+                <option value="Text">Text</option>
+                <option value="Phone call">Phone call</option>
+              </select></label>
+              <label><span>WHAT ARE YOU INTERESTED IN?</span><select name="interest" required defaultValue="">
+                <option value="" disabled>Choose one</option>
+                <option value="Learn about the PRYSM iO device">Learning about the PRYSM iO device</option>
+                <option value="Request a free scan">Requesting a free scan</option>
+                <option value="Buying my own device">Buying my own device</option>
+                <option value="Other wellness question">Another wellness question</option>
+              </select></label>
+              <label><span>MAIN WELLNESS GOAL (OPTIONAL)</span><input name="primary_goal" placeholder="What would you like to learn or work on?" /></label>
+              <label><span>YOUR MESSAGE (OPTIONAL)</span><textarea name="message" rows={3} placeholder="Share a question. Please don’t include private medical details." /></label>
+              <label className="consent-field"><input type="checkbox" name="contact_consent" value="yes" required /><span className="consent-copy">I agree Jennifer may contact me about this inquiry using my preferred contact method.</span></label>
               <button className="button-primary submit-button" type="submit" disabled={formState === 'sending'}>
-                {formState === 'sending' ? 'Sending...' : 'Ask Jennifer'} <ArrowRight size={15} />
+                {formState === 'sending' ? 'Sending...' : 'Send my inquiry'} <ArrowRight size={15} />
               </button>
               {formState === 'error' && <p className="form-error">Something went wrong. Please try again.</p>}
             </form>
