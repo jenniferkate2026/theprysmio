@@ -179,6 +179,71 @@ function PrysmPage() {
         </div>
       </section>
 
+      <section className="section family-section" id="family-wellness">
+        <SectionIntro kicker="WELLNESS FOR THE WHOLE FAMILY" title={<>MAKE WELLNESS<br /><em>A FAMILY HABIT.</em></>}>
+          Simple routines practiced together can make colorful foods, movement, and everyday wellness feel more natural and fun for kids.
+        </SectionIntro>
+        <div className="family-guide">
+          <div><span className="micro-label">MOMS, START HERE</span><p>Start here: watch my grandson scan, see how families can make wellness fun, then get your own PRYSM iO. The app and family setup are handled on your phone.</p></div>
+          <div className="family-guide-actions">
+            <a href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">1. Watch my grandson scan <ArrowRight size={14} /></a>
+            <a href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">2. Buy your own PRYSM iO <ArrowRight size={14} /></a>
+            <a href="/downloads/prysm-family-score-tracker.svg" download>3. Get the free family tracker <ArrowDown size={14} /></a>
+          </div>
+        </div>
+        <div className="family-habits">
+          <article><span>01 / MAKE IT EVERYDAY</span><h3>Start with simple choices</h3><p>Let kids help choose colorful fruits and vegetables, move together, and celebrate the small choices your family repeats.</p></article>
+          <article><span>02 / MAKE IT FUN</span><h3>Celebrate the effort</h3><p>Use a family goal and score tracker to spark curiosity. Celebrate showing up and trying, rather than focusing on a particular number.</p></article>
+          <article><span>03 / MAKE IT YOURS</span><h3>Keep it age-appropriate</h3><p>Use your own device and the app on your phone. A legal guardian adds family members and gives permission inside the app.</p></article>
+        </div>
+        <div className="family-links">
+          <a className="family-feature" href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">
+            <span className="micro-label">A LITTLE FAMILY MOMENT</span>
+            <strong>Watch my grandson try his PRYSM scan</strong>
+            <span>See his excitement with the quick fingertip scan.</span>
+            <span className="family-link-action">WATCH THE REEL <ArrowRight size={15} /></span>
+          </a>
+          <a className="family-feature family-product" href={kidsSupplementsUrl} target="_blank" rel="noopener noreferrer">
+            <span className="micro-label">KIDS’ NUTRITION</span>
+            <strong>Explore Pharmanex® Kids Jungamals®</strong>
+            <span>See the children’s multivitamin on my Nu Skin site.</span>
+            <span className="family-link-action">VIEW KIDS’ VITAMINS <ArrowRight size={15} /></span>
+          </a>
+        </div>
+        <div className="family-tools">
+          <div>
+            <span className="micro-label">FREE PRINTABLES</span>
+            <h3>Make healthy habits fun to track.</h3>
+            <p>Download and edit these family tools before printing. Use them to record scores, practice a simple goal, and celebrate effort.</p>
+            <div className="family-downloads">
+              <a className="button-primary" href="/downloads/prysm-family-score-tracker.svg" download>Download editable score tracker <ArrowDown size={14} /></a>
+              <a className="button-secondary" href="/downloads/prysm-family-goal-chart.svg" download>Download editable goal chart <ArrowDown size={14} /></a>
+            </div>
+          </div>
+          <aside className="family-note">
+            <strong>Keep it positive.</strong>
+            <p>PRYSM iO scores are a wellness tracking tool, not a medical diagnosis. Ask your child’s healthcare professional about nutrition and supplements for your child.</p>
+          </aside>
+        </div>
+        <p className="family-disclosure">I’m an independent Nu Skin Brand Affiliate. I may earn from purchases made through my Nu Skin link.</p>
+      </section>
+
+      <section className="section business-section" id="business-opportunity">
+        <SectionIntro kicker="FOR WELLNESS PROFESSIONALS" title={<>GROW YOUR<br /><em>WELLNESS BUSINESS.</em></>}>
+          Medspa owners, health coaches, and gym owners: explore adding PRYSM iO and wellness products to the services and routines you already offer.
+        </SectionIntro>
+        <div className="business-path">
+          <div><span className="micro-label">A BUSINESS PATH TO EXPLORE</span><h3>Build around tools you believe in.</h3><p>Learn how I use the PRYSM iO device and Nu Skin products, what brand affiliate participation involves, and whether it fits your business. I’ll share what I know so you can decide if it’s right for you.</p></div>
+          <div className="business-path-actions">
+            <span>01 / See how the device can support wellness conversations</span>
+            <span>02 / Explore products and customer subscriptions</span>
+            <span>03 / Ask about the independent affiliate opportunity</span>
+            <button className="button-primary" onClick={() => scrollTo('#contact')}>Ask about the business path <ArrowRight size={14} /></button>
+          </div>
+        </div>
+        <p className="family-disclosure">Business participation is optional. Earnings are not guaranteed; results depend on individual effort and other factors.</p>
+      </section>
+
       <section className="section" id="what-it-does">
         <SectionIntro kicker="WHAT IT DOES" title={<>KNOW IF YOUR<br /><em>ROUTINE IS WORKING.</em></>}>
           You deserve to know—not just hope. Prysm iO™ measures carotenoid nutrient levels in your skin, a trusted biomarker correlated with healthy aging.
@@ -287,70 +352,7 @@ function PrysmPage() {
         </div>
       </section>
 
-      <section className="section family-section" id="family-wellness">
-        <SectionIntro kicker="WELLNESS FOR THE WHOLE FAMILY" title={<>MAKE WELLNESS<br /><em>A FAMILY HABIT.</em></>}>
-          Simple routines practiced together can make colorful foods, movement, and everyday wellness feel more natural and fun for kids.
-        </SectionIntro>
-        <div className="family-guide">
-          <div><span className="micro-label">MOMS, START HERE</span><p>Start here: watch my grandson scan, see how families can make wellness fun, then get your own PRYSM iO. The app and family setup are handled on your phone.</p></div>
-          <div className="family-guide-actions">
-            <a href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">1. Watch my grandson scan <ArrowRight size={14} /></a>
-            <a href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">2. Buy your own PRYSM iO <ArrowRight size={14} /></a>
-            <a href="/downloads/prysm-family-score-tracker.svg" download>3. Get the free family tracker <ArrowDown size={14} /></a>
-          </div>
-        </div>
-        <div className="family-habits">
-          <article><span>01 / MAKE IT EVERYDAY</span><h3>Start with simple choices</h3><p>Let kids help choose colorful fruits and vegetables, move together, and celebrate the small choices your family repeats.</p></article>
-          <article><span>02 / MAKE IT FUN</span><h3>Celebrate the effort</h3><p>Use a family goal and score tracker to spark curiosity. Celebrate showing up and trying, rather than focusing on a particular number.</p></article>
-          <article><span>03 / MAKE IT YOURS</span><h3>Keep it age-appropriate</h3><p>Use your own device and the app on your phone. A legal guardian adds family members and gives permission inside the app.</p></article>
-        </div>
-        <div className="family-links">
-          <a className="family-feature" href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">
-            <span className="micro-label">A LITTLE FAMILY MOMENT</span>
-            <strong>Watch my grandson try his PRYSM scan</strong>
-            <span>See his excitement with the quick fingertip scan.</span>
-            <span className="family-link-action">WATCH THE REEL <ArrowRight size={15} /></span>
-          </a>
-          <a className="family-feature family-product" href={kidsSupplementsUrl} target="_blank" rel="noopener noreferrer">
-            <span className="micro-label">KIDS’ NUTRITION</span>
-            <strong>Explore Pharmanex® Kids Jungamals®</strong>
-            <span>See the children’s multivitamin on my Nu Skin site.</span>
-            <span className="family-link-action">VIEW KIDS’ VITAMINS <ArrowRight size={15} /></span>
-          </a>
-        </div>
-        <div className="family-tools">
-          <div>
-            <span className="micro-label">FREE PRINTABLES</span>
-            <h3>Make healthy habits fun to track.</h3>
-            <p>Download and edit these family tools before printing. Use them to record scores, practice a simple goal, and celebrate effort.</p>
-            <div className="family-downloads">
-              <a className="button-primary" href="/downloads/prysm-family-score-tracker.svg" download>Download editable score tracker <ArrowDown size={14} /></a>
-              <a className="button-secondary" href="/downloads/prysm-family-goal-chart.svg" download>Download editable goal chart <ArrowDown size={14} /></a>
-            </div>
-          </div>
-          <aside className="family-note">
-            <strong>Keep it positive.</strong>
-            <p>PRYSM iO scores are a wellness tracking tool, not a medical diagnosis. Ask your child’s healthcare professional about nutrition and supplements for your child.</p>
-          </aside>
-        </div>
-        <p className="family-disclosure">I’m an independent Nu Skin Brand Affiliate. I may earn from purchases made through my Nu Skin link.</p>
-      </section>
-
-      <section className="section business-section" id="business-opportunity">
-        <SectionIntro kicker="FOR WELLNESS PROFESSIONALS" title={<>GROW YOUR<br /><em>WELLNESS BUSINESS.</em></>}>
-          Medspa owners, health coaches, and gym owners: explore adding PRYSM iO and wellness products to the services and routines you already offer.
-        </SectionIntro>
-        <div className="business-path">
-          <div><span className="micro-label">A BUSINESS PATH TO EXPLORE</span><h3>Build around tools you believe in.</h3><p>Learn how I use the PRYSM iO device and Nu Skin products, what brand affiliate participation involves, and whether it fits your business. I’ll share what I know so you can decide if it’s right for you.</p></div>
-          <div className="business-path-actions">
-            <span>01 / See how the device can support wellness conversations</span>
-            <span>02 / Explore products and customer subscriptions</span>
-            <span>03 / Ask about the independent affiliate opportunity</span>
-            <button className="button-primary" onClick={() => scrollTo('#contact')}>Ask about the business path <ArrowRight size={14} /></button>
-          </div>
-        </div>
-        <p className="family-disclosure">Business participation is optional. Earnings are not guaranteed; results depend on individual effort and other factors.</p>
-      </section>
+      
 
       <section className="contact-section" id="contact">
         <div className="contact-copy">
