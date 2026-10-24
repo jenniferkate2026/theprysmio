@@ -251,3 +251,16 @@ footer button svg { transform: rotate(180deg); }
 .family-guide-actions a, .family-guide-actions button { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding: 10px 0; color: var(--paper); background: transparent; border: 0; border-bottom: 1px solid var(--line); text-align: left; font-size: 10px; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
 .family-guide-actions a:hover, .family-guide-actions button:hover { color: var(--violet); }
 @media (max-width: 760px) { .family-guide { grid-template-columns: 1fr; gap: 18px; padding: 24px; } }
+
+
+.business-section { background: radial-gradient(circle at 12% 20%, rgba(192,132,252,.08), transparent 34%), #08080a; }
+.business-path { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 6vw, 84px); align-items: center; padding: clamp(30px, 5vw, 60px); border: 1px solid var(--line); background: rgba(255,255,255,.018); }
+.business-path h3 { max-width: 520px; margin: 18px 0 14px; font: 800 clamp(2rem, 4vw, 3.5rem)/.95 'Inter Tight', sans-serif; letter-spacing: -.04em; text-transform: uppercase; }
+.business-path p { max-width: 560px; color: var(--muted); font-size: 12px; line-height: 1.85; }
+.business-path-actions { display: flex; flex-direction: column; gap: 14px; }
+.business-path-actions > span { padding: 13px 0; color: var(--paper); border-bottom: 1px solid var(--line); font-size: 10px; line-height: 1.5; letter-spacing: .08em; text-transform: uppercase; }
+.business-path-actions .button-primary { align-self: flex-start; margin-top: 12px; }
+@media (max-width: 760px) {
+  .business-path { grid-template-columns: 1fr; gap: 20px; }
+  .business-path-actions .button-primary { align-self: stretch; }
+}
