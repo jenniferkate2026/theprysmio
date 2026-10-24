@@ -13,10 +13,11 @@
 <text x="445" y="414" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#15131a">COLORFUL FOOD OR DAILY HABIT</text>
 <line x1="52" y1="487" x2="798" y2="487" stroke="#c9c4ce" stroke-width="1.5"/><line x1="52" y1="542" x2="798" y2="542" stroke="#c9c4ce" stroke-width="1.5"/><line x1="52" y1="597" x2="798" y2="597" stroke="#c9c4ce" stroke-width="1.5"/><line x1="52" y1="652" x2="798" y2="652" stroke="#c9c4ce" stroke-width="1.5"/><line x1="52" y1="707" x2="798" y2="707" stroke="#c9c4ce" stroke-width="1.5"/><line x1="52" y1="762" x2="798" y2="762" stroke="#c9c4ce" stroke-width="1.5"/><line x1="52" y1="817" x2="798" y2="817" stroke="#c9c4ce" stroke-width="1.5"/><line x1="52" y1="872" x2="798" y2="872" stroke="#c9c4ce" stroke-width="1.5"/>
 <line x1="270" y1="380" x2="270" y2="872" stroke="#c9c4ce" stroke-width="1.5"/><line x1="420" y1="380" x2="420" y2="872" stroke="#c9c4ce" stroke-width="1.5"/>
-<text x="52" y="914" font-family="Arial,sans-serif" font-size="14" fill="#56515e">Use with a grown-up. PRYSM iO is intended for children ages 3 and older.</text>
-<line x1="52" y1="936" x2="798" y2="936" stroke="#d8d0df" stroke-width="1"/>
-<text x="52" y="963" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#c98271">Created by JenniferKate™ | RemiKate Collective LLC</text>
-<text x="52" y="984" font-family="Arial,sans-serif" font-size="10" fill="#56515e">Personal family-use printable for sharing. Not for resale or official Nu Skin material.</text>
-<text x="52" y="1005" font-family="Arial,sans-serif" font-size="10" fill="#56515e">A score is for wellness tracking, not diagnosis. Follow device instructions.</text>
-<text x="52" y="1026" font-family="Arial,sans-serif" font-size="10" fill="#56515e">Ask your child’s healthcare professional about nutrition and supplements.</text>
+<text x="52" y="907" font-family="Arial,sans-serif" font-size="12" fill="#56515e">For ages 3+. A legal guardian must give permission before a child uses PRYSM iO.</text>
+<text x="52" y="926" font-family="Arial,sans-serif" font-size="12" fill="#56515e">The guardian adds family members on their own PRYSM iO device.</text>
+<line x1="52" y1="946" x2="798" y2="946" stroke="#d8d0df" stroke-width="1"/>
+<text x="52" y="973" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#c98271">Created by JenniferKate™ | RemiKate Collective LLC</text>
+<text x="52" y="994" font-family="Arial,sans-serif" font-size="10" fill="#56515e">Personal family-use printable for sharing. Not for resale or official Nu Skin material.</text>
+<text x="52" y="1015" font-family="Arial,sans-serif" font-size="10" fill="#56515e">A score is for wellness tracking, not diagnosis. Follow device instructions.</text>
+<text x="52" y="1036" font-family="Arial,sans-serif" font-size="10" fill="#56515e">Ask your child’s healthcare professional about nutrition and supplements.</text>
 </svg>
