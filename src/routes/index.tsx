@@ -292,17 +292,17 @@ function PrysmPage() {
           Simple routines practiced together can make colorful foods, movement, and everyday wellness feel more natural and fun for kids.
         </SectionIntro>
         <div className="family-guide">
-          <div><span className="micro-label">MOMS, START HERE</span><p>Watch how the scan works, use a free family tracker, then ask me about a scan or the device when you’re ready.</p></div>
+          <div><span className="micro-label">MOMS, START HERE</span><p>Watch my grandson’s example, download a free tracker, then use your own PRYSM iO at home. Each family needs its own device, and a legal guardian must give permission and add family members on that device.</p></div>
           <div className="family-guide-actions">
             <a href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">1. Watch my grandson scan <ArrowRight size={14} /></a>
             <a href="/downloads/prysm-family-score-tracker.svg" download>2. Get the free tracker <ArrowDown size={14} /></a>
-            <button onClick={() => scrollTo('#contact')}>3. Ask about a family scan <ArrowRight size={14} /></button>
+            <a href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">3. Shop for your own device <ArrowRight size={14} /></a>
           </div>
         </div>
         <div className="family-habits">
           <article><span>01 / MAKE IT EVERYDAY</span><h3>Start with simple choices</h3><p>Let kids help choose colorful fruits and vegetables, move together, and celebrate the small choices your family repeats.</p></article>
           <article><span>02 / MAKE IT FUN</span><h3>Celebrate the effort</h3><p>Use a family goal and score tracker to spark curiosity. Celebrate showing up and trying, rather than focusing on a particular number.</p></article>
-          <article><span>03 / MAKE IT YOURS</span><h3>Keep it age-appropriate</h3><p>Children can join in with a grown-up. PRYSM iO is intended for children ages 3 and older; follow the device instructions.</p></article>
+          <article><span>03 / MAKE IT YOURS</span><h3>Keep it age-appropriate</h3><p>PRYSM iO is designed for children ages 3 and older. A legal guardian must give permission and add family members in their own device account.</p></article>
         </div>
         <div className="family-links">
           <a className="family-feature" href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">
@@ -340,7 +340,7 @@ function PrysmPage() {
         <div className="contact-copy">
           <span className="micro-label">PERSONAL WELLNESS GUIDANCE</span>
           <h2>LET’S MAKE YOUR<br /><em>NEXT MOVE</em> MEASURABLE.</h2>
-          <p>Ask Jennifer about Prysm iO™, choosing a routine, or arranging your first wellness scan.</p>
+          <p>Ask Jennifer about PRYSM iO, choosing a routine, or adult scan options.</p>
           <div className="contact-signature"><span>JK</span><div><strong>Jennifer Kate</strong><small>Independent Nu Skin Brand Affiliate</small></div></div>
         </div>
 
@@ -367,7 +367,7 @@ function PrysmPage() {
                 <option value="" disabled>Choose one</option>
                 <option value="Learn about the PRYSM iO device">Learning about the PRYSM iO device</option>
                 <option value="Request a free scan">Requesting a free scan</option>
-                <option value="Family wellness or a child scan">Family wellness or a child scan</option>
+                <option value="Questions about using PRYSM iO with my family">Questions about using PRYSM iO with my family</option>
                 <option value="Buying my own device">Buying my own device</option>
                 <option value="Other wellness question">Another wellness question</option>
               </select></label>
