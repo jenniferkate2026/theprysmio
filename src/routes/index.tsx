@@ -313,10 +313,10 @@ function PrysmPage() {
           <div>
             <span className="micro-label">FREE PRINTABLES</span>
             <h3>Make healthy habits fun to track.</h3>
-            <p>Print these family tools to set a simple goal, record scores, and choose a fun way to celebrate together.</p>
+            <p>Download and edit these family tools before printing. Use them to record scores, practice a simple goal, and celebrate effort.</p>
             <div className="family-downloads">
-              <a className="button-primary" href="/downloads/prysm-family-score-tracker.svg" download>Download score tracker <ArrowDown size={14} /></a>
-              <a className="button-secondary" href="/downloads/prysm-family-goal-chart.svg" download>Download goal chart <ArrowDown size={14} /></a>
+              <a className="button-primary" href="/downloads/prysm-family-score-tracker.svg" download>Download editable score tracker <ArrowDown size={14} /></a>
+              <a className="button-secondary" href="/downloads/prysm-family-goal-chart.svg" download>Download editable goal chart <ArrowDown size={14} /></a>
             </div>
           </div>
           <aside className="family-note">
