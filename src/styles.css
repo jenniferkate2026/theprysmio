@@ -153,9 +153,15 @@ h1 em, h2 em { color: var(--violet); font-style: normal; }
 .form-wrap form { width: 100%; max-width: 590px; }
 .form-wrap label { display: block; margin-bottom: 34px; }
 .form-wrap label span { display: block; margin-bottom: 14px; color: var(--violet); font-size: 8px; letter-spacing: .3em; }
-.form-wrap input, .form-wrap textarea { width: 100%; padding: 0 0 13px; color: var(--paper); background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.2); border-radius: 0; outline: none; font-size: 12px; resize: none; transition: border-color .2s; }
-.form-wrap input:focus, .form-wrap textarea:focus { border-color: var(--violet); }
+.form-wrap input, .form-wrap textarea, .form-wrap select { width: 100%; padding: 0 0 13px; color: var(--paper); background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.2); border-radius: 0; outline: none; font-size: 12px; resize: none; transition: border-color .2s; }
+.form-wrap input:focus, .form-wrap textarea:focus, .form-wrap select:focus { border-color: var(--violet); }
 .form-wrap input::placeholder, .form-wrap textarea::placeholder { color: #55515d; }
+.form-wrap select option { color: var(--paper); background: var(--panel); }
+.form-wrap .consent-field { display: flex; align-items: flex-start; gap: 12px; margin: 0 0 24px; }
+.form-wrap .consent-field input { flex: 0 0 17px; width: 17px; height: 17px; padding: 0; margin: 0; accent-color: var(--violet); }
+.form-wrap .consent-field .consent-copy { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.6; letter-spacing: .02em; text-transform: none; }
+.purchase-link { align-self: flex-start; margin-bottom: 22px; text-align: left; }
+.form-intro { margin: 0 0 28px; color: var(--muted); font-size: 11px; line-height: 1.7; }
 .hidden-field { display: none; }
 .submit-button { margin-top: 8px; min-width: 190px; }
 .submit-button:disabled { opacity: .55; cursor: wait; }
