@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="1100" viewBox="0 0 850 1100" role="img" aria-labelledby="title desc">
+<title id="title">PRYSM iO Family Score Tracker</title><desc id="desc">A printable tracker to record scan dates and scores, set a family wellness goal, and choose a reward.</desc>
+<rect width="850" height="1100" rx="32" fill="#faf9f7"/>
+<rect x="28" y="28" width="794" height="1044" rx="24" fill="none" stroke="#c084fc" stroke-width="3"/>
+<text x="70" y="104" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="5" fill="#8e57be">FAMILY WELLNESS TOOL</text>
+<text x="70" y="174" font-family="Arial,sans-serif" font-size="48" font-weight="800" fill="#15131a">PRYSM iO</text>
+<text x="70" y="226" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#8e57be">SCORE TRACKER</text>
+<text x="70" y="274" font-family="Arial,sans-serif" font-size="20" fill="#56515e">A little curiosity. A lot of celebrating healthy habits.</text>
+<text x="70" y="342" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#15131a">MY GOAL SCORE</text>
+<line x1="288" y1="348" x2="780" y2="348" stroke="#8e57be" stroke-width="3"/>
+<text x="70" y="402" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#15131a">MY REWARD</text>
+<line x1="230" y1="408" x2="780" y2="408" stroke="#8e57be" stroke-width="3"/>
+<rect x="70" y="452" width="710" height="58" rx="15" fill="#efe4f8"/>
+<text x="102" y="490" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#15131a">DATE</text>
+<text x="508" y="490" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#15131a">SCORE</text>
+<text x="662" y="490" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#15131a">COLORFUL FOOD I TRIED</text>
+<line x1="70" y1="510" x2="780" y2="510" stroke="#c9c4ce" stroke-width="2"/><line x1="475" y1="455" x2="475" y2="510" stroke="#c9c4ce" stroke-width="2"/><line x1="635" y1="455" x2="635" y2="510" stroke="#c9c4ce" stroke-width="2"/><line x1="70" y1="565" x2="780" y2="565" stroke="#c9c4ce" stroke-width="2"/><line x1="475" y1="510" x2="475" y2="565" stroke="#c9c4ce" stroke-width="2"/><line x1="635" y1="510" x2="635" y2="565" stroke="#c9c4ce" stroke-width="2"/><line x1="70" y1="620" x2="780" y2="620" stroke="#c9c4ce" stroke-width="2"/><line x1="475" y1="565" x2="475" y2="620" stroke="#c9c4ce" stroke-width="2"/><line x1="635" y1="565" x2="635" y2="620" stroke="#c9c4ce" stroke-width="2"/><line x1="70" y1="675" x2="780" y2="675" stroke="#c9c4ce" stroke-width="2"/><line x1="475" y1="620" x2="475" y2="675" stroke="#c9c4ce" stroke-width="2"/><line x1="635" y1="620" x2="635" y2="675" stroke="#c9c4ce" stroke-width="2"/><line x1="70" y1="730" x2="780" y2="730" stroke="#c9c4ce" stroke-width="2"/><line x1="475" y1="675" x2="475" y2="730" stroke="#c9c4ce" stroke-width="2"/><line x1="635" y1="675" x2="635" y2="730" stroke="#c9c4ce" stroke-width="2"/><line x1="70" y1="785" x2="780" y2="785" stroke="#c9c4ce" stroke-width="2"/><line x1="475" y1="730" x2="475" y2="785" stroke="#c9c4ce" stroke-width="2"/><line x1="635" y1="730" x2="635" y2="785" stroke="#c9c4ce" stroke-width="2"/><line x1="70" y1="840" x2="780" y2="840" stroke="#c9c4ce" stroke-width="2"/><line x1="475" y1="785" x2="475" y2="840" stroke="#c9c4ce" stroke-width="2"/><line x1="635" y1="785" x2="635" y2="840" stroke="#c9c4ce" stroke-width="2"/><line x1="70" y1="895" x2="780" y2="895" stroke="#c9c4ce" stroke-width="2"/><line x1="475" y1="840" x2="475" y2="895" stroke="#c9c4ce" stroke-width="2"/><line x1="635" y1="840" x2="635" y2="895" stroke="#c9c4ce" stroke-width="2"/><line x1="70" y1="950" x2="780" y2="950" stroke="#c9c4ce" stroke-width="2"/><line x1="475" y1="895" x2="475" y2="950" stroke="#c9c4ce" stroke-width="2"/><line x1="635" y1="895" x2="635" y2="950" stroke="#c9c4ce" stroke-width="2"/>
+<line x1="70" y1="1005" x2="780" y2="1005" stroke="#c9c4ce" stroke-width="2"/>
+<text x="70" y="1040" font-family="Arial,sans-serif" font-size="15" fill="#56515e">For children ages 3+. Use with a grown-up and follow PRYSM iO instructions.</text>
+<text x="70" y="1062" font-family="Arial,sans-serif" font-size="13" fill="#77717e">A score is a wellness tracking tool, not a medical diagnosis. Ask your child’s healthcare professional about supplements.</text>
+</svg>
