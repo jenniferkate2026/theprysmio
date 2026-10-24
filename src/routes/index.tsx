@@ -26,6 +26,7 @@ const navItems = [
   ['What it does', '#what-it-does'],
   ['How it works', '#how-it-works'],
   ['Family wellness', '#family-wellness'],
+  ['For wellness pros', '#business-opportunity'],
   ['The science', '#science'],
   ['Supplements', '#supplements'],
 ]
@@ -151,10 +152,9 @@ function PrysmPage() {
           <p className="hero-lead">A fifteen-second wellness scan that turns the nutrients in your skin into a score you can act on.</p>
           <p className="hero-note">Prysm iO™ measures skin carotenoid levels—your real-time antioxidant status, backed by more than twenty years of science.</p>
           <div className="hero-actions">
-            <button className="button-primary" onClick={() => scrollTo('#what-it-does')}>Discover Prysm iO <ArrowDown size={15} /></button>
-            <button className="button-secondary" onClick={() => scrollTo('#contact')}>Talk to Jennifer</button>
-            <button className="button-secondary" onClick={() => scrollTo('#family-wellness')}>For moms & families <ArrowRight size={14} /></button>
-            <a className="button-secondary" href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">Buy PRYSM iO <ArrowRight size={14} /></a>
+            <button className="button-primary" onClick={() => scrollTo('#family-wellness')}>For moms & families <ArrowRight size={14} /></button>
+            <button className="button-secondary" onClick={() => scrollTo('#business-opportunity')}>For wellness professionals <ArrowRight size={14} /></button>
+            <a className="button-secondary" href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">Buy your PRYSM iO <ArrowRight size={14} /></a>
           </div>
         </div>
 
@@ -292,17 +292,17 @@ function PrysmPage() {
           Simple routines practiced together can make colorful foods, movement, and everyday wellness feel more natural and fun for kids.
         </SectionIntro>
         <div className="family-guide">
-          <div><span className="micro-label">MOMS, START HERE</span><p>Watch my grandson’s example and download the free tracker. When you get your own PRYSM iO, download the app to your phone. A legal guardian gives permission and adds family members in the app.</p></div>
+          <div><span className="micro-label">MOMS, START HERE</span><p>Start here: watch my grandson scan, see how families can make wellness fun, then get your own PRYSM iO. The app and family setup are handled on your phone.</p></div>
           <div className="family-guide-actions">
             <a href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">1. Watch my grandson scan <ArrowRight size={14} /></a>
-            <a href="/downloads/prysm-family-score-tracker.svg" download>2. Get the free tracker <ArrowDown size={14} /></a>
-            <a href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">3. Shop for your own device <ArrowRight size={14} /></a>
+            <a href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">2. Buy your own PRYSM iO <ArrowRight size={14} /></a>
+            <a href="/downloads/prysm-family-score-tracker.svg" download>3. Get the free family tracker <ArrowDown size={14} /></a>
           </div>
         </div>
         <div className="family-habits">
           <article><span>01 / MAKE IT EVERYDAY</span><h3>Start with simple choices</h3><p>Let kids help choose colorful fruits and vegetables, move together, and celebrate the small choices your family repeats.</p></article>
           <article><span>02 / MAKE IT FUN</span><h3>Celebrate the effort</h3><p>Use a family goal and score tracker to spark curiosity. Celebrate showing up and trying, rather than focusing on a particular number.</p></article>
-          <article><span>03 / MAKE IT YOURS</span><h3>Keep it age-appropriate</h3><p>PRYSM iO is designed for children ages 3 and older. Buy your own device, download the app to your phone, and follow the in-app setup. A legal guardian gives permission and adds family members there.</p></article>
+          <article><span>03 / MAKE IT YOURS</span><h3>Keep it age-appropriate</h3><p>Use your own device and the app on your phone. A legal guardian adds family members and gives permission inside the app.</p></article>
         </div>
         <div className="family-links">
           <a className="family-feature" href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">
@@ -336,6 +336,22 @@ function PrysmPage() {
         <p className="family-disclosure">I’m an independent Nu Skin Brand Affiliate. I may earn from purchases made through my Nu Skin link.</p>
       </section>
 
+      <section className="section business-section" id="business-opportunity">
+        <SectionIntro kicker="FOR WELLNESS PROFESSIONALS" title={<>GROW YOUR<br /><em>WELLNESS BUSINESS.</em></>}>
+          Medspa owners, health coaches, and gym owners: explore adding PRYSM iO and wellness products to the services and routines you already offer.
+        </SectionIntro>
+        <div className="business-path">
+          <div><span className="micro-label">A BUSINESS PATH TO EXPLORE</span><h3>Build around tools you believe in.</h3><p>Learn how I use the PRYSM iO device and Nu Skin products, what brand affiliate participation involves, and whether it fits your business. I’ll share what I know so you can decide if it’s right for you.</p></div>
+          <div className="business-path-actions">
+            <span>01 / See how the device can support wellness conversations</span>
+            <span>02 / Explore products and customer subscriptions</span>
+            <span>03 / Ask about the independent affiliate opportunity</span>
+            <button className="button-primary" onClick={() => scrollTo('#contact')}>Ask about the business path <ArrowRight size={14} /></button>
+          </div>
+        </div>
+        <p className="family-disclosure">Business participation is optional. Earnings are not guaranteed; results depend on individual effort and other factors.</p>
+      </section>
+
       <section className="contact-section" id="contact">
         <div className="contact-copy">
           <span className="micro-label">PERSONAL WELLNESS GUIDANCE</span>
@@ -366,9 +382,9 @@ function PrysmPage() {
               <label><span>WHAT ARE YOU INTERESTED IN?</span><select name="interest" required defaultValue="">
                 <option value="" disabled>Choose one</option>
                 <option value="Learn about the PRYSM iO device">Learning about the PRYSM iO device</option>
-                <option value="Request a free scan">Requesting a free scan</option>
                 <option value="Questions about using PRYSM iO with my family">Questions about using PRYSM iO with my family</option>
                 <option value="Buying my own device">Buying my own device</option>
+                <option value="Wellness business opportunity">Wellness business opportunity</option>
                 <option value="Other wellness question">Another wellness question</option>
               </select></label>
               <label><span>MAIN WELLNESS GOAL (OPTIONAL)</span><input name="primary_goal" placeholder="What would you like to learn or work on?" /></label>
