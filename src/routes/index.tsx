@@ -153,6 +153,7 @@ function PrysmPage() {
           <div className="hero-actions">
             <button className="button-primary" onClick={() => scrollTo('#what-it-does')}>Discover Prysm iO <ArrowDown size={15} /></button>
             <button className="button-secondary" onClick={() => scrollTo('#contact')}>Talk to Jennifer</button>
+            <button className="button-secondary" onClick={() => scrollTo('#family-wellness')}>For moms & families <ArrowRight size={14} /></button>
             <a className="button-secondary" href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">Buy PRYSM iO <ArrowRight size={14} /></a>
           </div>
         </div>
@@ -290,6 +291,14 @@ function PrysmPage() {
         <SectionIntro kicker="WELLNESS FOR THE WHOLE FAMILY" title={<>MAKE WELLNESS<br /><em>A FAMILY HABIT.</em></>}>
           Simple routines practiced together can make colorful foods, movement, and everyday wellness feel more natural and fun for kids.
         </SectionIntro>
+        <div className="family-guide">
+          <div><span className="micro-label">MOMS, START HERE</span><p>Watch how the scan works, use a free family tracker, then ask me about a scan or the device when you’re ready.</p></div>
+          <div className="family-guide-actions">
+            <a href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">1. Watch my grandson scan <ArrowRight size={14} /></a>
+            <a href="/downloads/prysm-family-score-tracker.svg" download>2. Get the free tracker <ArrowDown size={14} /></a>
+            <button onClick={() => scrollTo('#contact')}>3. Ask about a family scan <ArrowRight size={14} /></button>
+          </div>
+        </div>
         <div className="family-habits">
           <article><span>01 / MAKE IT EVERYDAY</span><h3>Start with simple choices</h3><p>Let kids help choose colorful fruits and vegetables, move together, and celebrate the small choices your family repeats.</p></article>
           <article><span>02 / MAKE IT FUN</span><h3>Celebrate the effort</h3><p>Use a family goal and score tracker to spark curiosity. Celebrate showing up and trying, rather than focusing on a particular number.</p></article>
@@ -358,6 +367,7 @@ function PrysmPage() {
                 <option value="" disabled>Choose one</option>
                 <option value="Learn about the PRYSM iO device">Learning about the PRYSM iO device</option>
                 <option value="Request a free scan">Requesting a free scan</option>
+                <option value="Family wellness or a child scan">Family wellness or a child scan</option>
                 <option value="Buying my own device">Buying my own device</option>
                 <option value="Other wellness question">Another wellness question</option>
               </select></label>
