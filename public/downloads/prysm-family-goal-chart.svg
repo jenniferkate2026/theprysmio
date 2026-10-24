@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="1100" viewBox="0 0 850 1100" role="img" aria-labelledby="title desc">
+<title id="title">PRYSM iO Family Goal and Reward Chart</title><desc id="desc">A printable family wellness habit chart with a simple weekly goal, daily check marks, and a reward.</desc>
+<rect width="850" height="1100" rx="32" fill="#faf9f7"/>
+<rect x="28" y="28" width="794" height="1044" rx="24" fill="none" stroke="#c084fc" stroke-width="3"/>
+<text x="70" y="104" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="5" fill="#8e57be">FAMILY WELLNESS TOOL</text>
+<text x="70" y="174" font-family="Arial,sans-serif" font-size="46" font-weight="800" fill="#15131a">SMALL STEPS,</text>
+<text x="70" y="228" font-family="Arial,sans-serif" font-size="46" font-weight="800" fill="#8e57be">BIG CELEBRATIONS</text>
+<text x="70" y="275" font-family="Arial,sans-serif" font-size="20" fill="#56515e">Choose one simple habit to practice together this week.</text>
+<text x="70" y="342" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#15131a">OUR FAMILY GOAL</text>
+<rect x="70" y="366" width="710" height="90" rx="18" fill="#fff" stroke="#d8d0df" stroke-width="2"/>
+<text x="70" y="516" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#15131a">OUR WEEK</text>
+<text x="70" y="552" font-family="Arial,sans-serif" font-size="17" fill="#77717e">Mark a circle for each day you try your goal.</text>
+<text x="120" y="612" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#56515e">MON</text><circle cx="120" cy="666" r="31" fill="#fff" stroke="#e67e72" stroke-width="5"/><text x="222" y="612" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#56515e">TUE</text><circle cx="222" cy="666" r="31" fill="#fff" stroke="#e9a451" stroke-width="5"/><text x="324" y="612" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#56515e">WED</text><circle cx="324" cy="666" r="31" fill="#fff" stroke="#d8bb4b" stroke-width="5"/><text x="426" y="612" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#56515e">THU</text><circle cx="426" cy="666" r="31" fill="#fff" stroke="#67a978" stroke-width="5"/><text x="528" y="612" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#56515e">FRI</text><circle cx="528" cy="666" r="31" fill="#fff" stroke="#419c9b" stroke-width="5"/><text x="630" y="612" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#56515e">SAT</text><circle cx="630" cy="666" r="31" fill="#fff" stroke="#5284c4" stroke-width="5"/><text x="732" y="612" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#56515e">SUN</text><circle cx="732" cy="666" r="31" fill="#fff" stroke="#9760b7" stroke-width="5"/>
+<text x="70" y="758" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#15131a">A FUN WAY TO CELEBRATE</text>
+<rect x="70" y="782" width="710" height="120" rx="18" fill="#fff" stroke="#d8d0df" stroke-width="2"/>
+<text x="70" y="952" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#8e57be">IDEAS: PICK A COLORFUL FRUIT • TAKE A FAMILY WALK • DANCE TOGETHER</text>
+<text x="70" y="1000" font-family="Arial,sans-serif" font-size="15" fill="#56515e">For children ages 3+. Use with a grown-up and follow PRYSM iO instructions.</text>
+<text x="70" y="1024" font-family="Arial,sans-serif" font-size="13" fill="#77717e">A score is a wellness tracking tool, not a medical diagnosis. Ask your child’s healthcare professional about supplements.</text>
+</svg>
