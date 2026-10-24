@@ -292,7 +292,7 @@ function PrysmPage() {
           Simple routines practiced together can make colorful foods, movement, and everyday wellness feel more natural and fun for kids.
         </SectionIntro>
         <div className="family-guide">
-          <div><span className="micro-label">MOMS, START HERE</span><p>Watch my grandson’s example, download a free tracker, then use your own PRYSM iO at home. Each family needs its own device, and a legal guardian must give permission and add family members on that device.</p></div>
+          <div><span className="micro-label">MOMS, START HERE</span><p>Watch my grandson’s example and download the free tracker. When you get your own PRYSM iO, download the app to your phone. A legal guardian gives permission and adds family members in the app.</p></div>
           <div className="family-guide-actions">
             <a href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">1. Watch my grandson scan <ArrowRight size={14} /></a>
             <a href="/downloads/prysm-family-score-tracker.svg" download>2. Get the free tracker <ArrowDown size={14} /></a>
@@ -302,7 +302,7 @@ function PrysmPage() {
         <div className="family-habits">
           <article><span>01 / MAKE IT EVERYDAY</span><h3>Start with simple choices</h3><p>Let kids help choose colorful fruits and vegetables, move together, and celebrate the small choices your family repeats.</p></article>
           <article><span>02 / MAKE IT FUN</span><h3>Celebrate the effort</h3><p>Use a family goal and score tracker to spark curiosity. Celebrate showing up and trying, rather than focusing on a particular number.</p></article>
-          <article><span>03 / MAKE IT YOURS</span><h3>Keep it age-appropriate</h3><p>PRYSM iO is designed for children ages 3 and older. A legal guardian must give permission and add family members in their own device account.</p></article>
+          <article><span>03 / MAKE IT YOURS</span><h3>Keep it age-appropriate</h3><p>PRYSM iO is designed for children ages 3 and older. Buy your own device, download the app to your phone, and follow the in-app setup. A legal guardian gives permission and adds family members there.</p></article>
         </div>
         <div className="family-links">
           <a className="family-feature" href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">
