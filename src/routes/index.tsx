@@ -19,10 +19,13 @@ export const Route = createFileRoute('/')({
 })
 
 const prysmBuyUrl = 'https://www.nuskin.com/us/en/mysite/jenniferkate/product/prysm-io-consumer-edition'
+const kidsSupplementsUrl = 'https://www.nuskin.com/us/en/mysite/jenniferkate/product/pharmanex-jungamals-scs'
+const grandsonScanReelUrl = 'https://www.instagram.com/reel/DWj7yNFjqtW/?obrf=dnp4dnpldzc3M243'
 
 const navItems = [
   ['What it does', '#what-it-does'],
   ['How it works', '#how-it-works'],
+  ['Family wellness', '#family-wellness'],
   ['The science', '#science'],
   ['Supplements', '#supplements'],
 ]
@@ -281,6 +284,47 @@ function PrysmPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="section family-section" id="family-wellness">
+        <SectionIntro kicker="WELLNESS FOR THE WHOLE FAMILY" title={<>MAKE WELLNESS<br /><em>A FAMILY HABIT.</em></>}>
+          Simple routines practiced together can make colorful foods, movement, and everyday wellness feel more natural and fun for kids.
+        </SectionIntro>
+        <div className="family-habits">
+          <article><span>01 / MAKE IT EVERYDAY</span><h3>Start with simple choices</h3><p>Let kids help choose colorful fruits and vegetables, move together, and celebrate the small choices your family repeats.</p></article>
+          <article><span>02 / MAKE IT FUN</span><h3>Celebrate the effort</h3><p>Use a family goal and score tracker to spark curiosity. Celebrate showing up and trying, rather than focusing on a particular number.</p></article>
+          <article><span>03 / MAKE IT YOURS</span><h3>Keep it age-appropriate</h3><p>Children can join in with a grown-up. PRYSM iO is intended for children ages 3 and older; follow the device instructions.</p></article>
+        </div>
+        <div className="family-links">
+          <a className="family-feature" href={grandsonScanReelUrl} target="_blank" rel="noopener noreferrer">
+            <span className="micro-label">A LITTLE FAMILY MOMENT</span>
+            <strong>Watch my grandson try his PRYSM scan</strong>
+            <span>See his excitement with the quick fingertip scan.</span>
+            <span className="family-link-action">WATCH THE REEL <ArrowRight size={15} /></span>
+          </a>
+          <a className="family-feature family-product" href={kidsSupplementsUrl} target="_blank" rel="noopener noreferrer">
+            <span className="micro-label">KIDS’ NUTRITION</span>
+            <strong>Explore Pharmanex® Kids Jungamals®</strong>
+            <span>See the children’s multivitamin on my Nu Skin site.</span>
+            <span className="family-link-action">VIEW KIDS’ VITAMINS <ArrowRight size={15} /></span>
+          </a>
+        </div>
+        <div className="family-tools">
+          <div>
+            <span className="micro-label">FREE PRINTABLES</span>
+            <h3>Make healthy habits fun to track.</h3>
+            <p>Print these family tools to set a simple goal, record scores, and choose a fun way to celebrate together.</p>
+            <div className="family-downloads">
+              <a className="button-primary" href="/downloads/prysm-family-score-tracker.svg" download>Download score tracker <ArrowDown size={14} /></a>
+              <a className="button-secondary" href="/downloads/prysm-family-goal-chart.svg" download>Download goal chart <ArrowDown size={14} /></a>
+            </div>
+          </div>
+          <aside className="family-note">
+            <strong>Keep it positive.</strong>
+            <p>PRYSM iO scores are a wellness tracking tool, not a medical diagnosis. Ask your child’s healthcare professional about nutrition and supplements for your child.</p>
+          </aside>
+        </div>
+        <p className="family-disclosure">I’m an independent Nu Skin Brand Affiliate. I may earn from purchases made through my Nu Skin link.</p>
       </section>
 
       <section className="contact-section" id="contact">
