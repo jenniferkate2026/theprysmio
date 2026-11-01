@@ -2,33 +2,51 @@ import { createFileRoute } from '@tanstack/react-router'
 import {
   ArrowDown,
   ArrowRight,
+  BadgeCheck,
+  Carrot,
   Check,
   ChevronRight,
+  CircleDashed,
   Dna,
   Eye,
   Fingerprint,
+  Gift,
   Menu,
+  Plus,
+  Power,
   ShieldCheck,
+  Smartphone,
   Sparkles,
   X,
 } from 'lucide-react'
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 
 export const Route = createFileRoute('/')({
   component: PrysmPage,
 })
 
 const prysmBuyUrl = 'https://www.nuskin.com/us/en/mysite/jenniferkate/product/prysm-io-consumer-edition'
+const prysmBundleUrl = 'https://www.nuskin.com/us/en/mysite/jenniferkate/product/prysm-io-healthy-habits-bundle-US'
+const storefrontUrl = 'https://jenniferkate.nuskin.com'
+const guaranteeUrl = 'https://www.nuskin.com/us/en/site/prysm-certified-guarantee'
+const opportunityUrl = 'https://www.nuskin.com/us/en/site/opportunity/nu-skin-sales-performance-plan'
+const affiliateSignupUrl = 'https://nskn.co/xzpvAX'
+const bookScanUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe-xUFjOKO27LdsW2Egxo-SeSnI5mzePgnKFmiqM8r1mfX_TA/viewform'
 const kidsSupplementsUrl = 'https://www.nuskin.com/us/en/mysite/jenniferkate/product/pharmanex-jungamals-scs'
 const grandsonScanReelUrl = 'https://www.instagram.com/reel/DWj7yNFjqtW/?obrf=dnp4dnpldzc3M243'
+const phoneDisplay = '864-710-7673'
+const phoneHref = 'tel:8647107673'
+const email = 'jen@thejenniferkate.com'
 
 const navItems = [
   ['What it does', '#what-it-does'],
   ['How it works', '#how-it-works'],
-  ['Family wellness', '#family-wellness'],
-  ['For wellness pros', '#business-opportunity'],
-  ['The science', '#science'],
+  ['Families', '#family-wellness'],
+  ['Science', '#science'],
   ['Supplements', '#supplements'],
+  ['Shop', '#get-yours'],
+  ['Book a scan', '#book'],
+  ['Business', '#business-opportunity'],
 ]
 
 const benefits = [
@@ -41,13 +59,13 @@ const benefits = [
   {
     number: '02',
     title: 'No blood tests',
-    summary: 'Painless results in fifteen seconds.',
+    summary: 'Painless, instant results in 15 seconds.',
     detail: 'Place your index finger on the lens and get a clear antioxidant score without a lab visit.',
   },
   {
     number: '03',
     title: 'AI-powered science',
-    summary: '200,000+ measurements per scan.',
+    summary: '700,000+ measurements per scan.',
     detail: 'Spectral Rai™ technology analyzes hyperspectral absorption data with AI calibration.',
   },
   {
@@ -58,30 +76,65 @@ const benefits = [
   },
   {
     number: '05',
-    title: '20+ years of research',
-    summary: 'Built on Nu Skin science leadership.',
-    detail: 'Every scan draws on decades of antioxidant research and carotenoid measurement expertise.',
+    title: 'Family friendly',
+    summary: 'Scan the whole household and compare.',
+    detail: 'A legal guardian adds family members inside the app, so everyone can follow their own score.',
   },
   {
     number: '06',
-    title: 'A younger biological age',
-    summary: 'High carotenoids correlate with healthy aging.',
-    detail: 'Use objective feedback to build habits that support long-term resilience and vitality.',
+    title: 'See your habits',
+    summary: 'Watch how food and supplements show up in your score.',
+    detail: 'Your score reflects your habits over the last several weeks, so you can see what is working.',
   },
 ]
 
 const scanSteps = [
-  ['01', 'Open the app', 'Launch Prysm iO™ and connect to your device.'],
-  ['02', 'Place finger', 'Cover the lens with the pad of your index finger.'],
-  ['03', 'Lights circle', 'Stay still while the sensor gathers spectral data.'],
-  ['04', 'Get your score', 'Review your antioxidant score and track the trend.'],
+  { number: '01', title: 'Power on', detail: 'Press the power button to turn on the device.', Icon: Power },
+  { number: '02', title: 'Place finger', detail: 'Place the pad of your index finger over the lens. The scan begins automatically.', note: '↳ Do not remove your finger during the scan.', Icon: Fingerprint },
+  { number: '03', title: 'Lights circle', detail: 'LEDs circle for 15 seconds while 700,000+ measurements are taken. A single flashing light reveals your score color zone.', Icon: CircleDashed },
+  { number: '04', title: 'Read your score', detail: 'After 10 seconds, the indicators turn off. Download the app for deeper insights, trends, and personalized recommendations.', Icon: Smartphone },
 ]
 
+const bestPractices = [
+  'Place device on a flat, level surface',
+  'Finger must be clean and dry',
+  'Clean the lens regularly with a soft cloth',
+  'Center the pad of your finger on the lens',
+  'Finger must fully cover the lens',
+  'Avoid moving during the 15-second scan',
+]
+
+const scoreRanges = [
+  ['Lowest', 'under 200', 12],
+  ['Lower', '200–299', 16],
+  ['Moderate', '300–399', 19],
+  ['Moderate to High', '400–549', 25],
+  ['Higher', '550–749', 19],
+  ['Highest', '750–1200', 9],
+] as const
+
 const supplements = [
-  ['LifePak+', 'Pharmanex', 'FOUNDATION', 'Broad-spectrum nutritional support designed to improve antioxidant status.'],
-  ['ageLOC R²', 'Nu Skin', 'AGING', 'Cellular and metabolic support for long-term wellness resilience.'],
-  ['Mind Full', 'MYND360', 'COGNITION', 'Targeted support for brain health, focus, and healthy memory.'],
-  ['G3', 'Pharmanex', 'VISION', 'Carotenoid-rich nutrition supporting eye health and visual acuity.'],
+  ['LifePak®', 'Pharmanex®', 'FOUNDATION', 'Essential vitamins, minerals, and phytonutrients — the foundation of your supplement stack.'],
+  ['Collagen+', 'Beauty Focus®', 'SKIN', 'Supports skin hydration and elasticity. Targeted collagen support for skin, hair, nails and joints.'],
+  ['Youth', 'ageLOC®', 'AGING', 'Supports youthful aging with metabolic support and long-term wellness resilience.'],
+  ['Mind Full', 'MYND360™', 'COGNITION', 'Brain health and memory support. Longevity-focused cellular health and mental clarity.'],
+  ['G3', 'Pharmanex®', 'ANTIOXIDANT', 'Antioxidant-rich superfruit blend. Potent defense against free radical damage.'],
+  ['Eye Formula', 'Pharmanex®', 'VISION', 'Targeted carotenoid support for eye health and visual acuity.'],
+]
+
+const accessories = [
+  ['Prysm iO Consumer Case', '$26'],
+  ['Prysm iO BR Stand + BR Case', '$50'],
+  ['Calibration Disc + Cleaning Cloth', '$5'],
+]
+
+const faqs: Array<[string, React.ReactNode]> = [
+  ['Does it hurt?', 'No. Just place your fingertip on the lens for 15 seconds.'],
+  ['Is this a medical test?', 'No. It’s a wellness education tool, not a diagnosis.'],
+  ['How do I raise my score?', 'Eat more colorful fruits and veggies, sleep well, move your body, and take Prysm Certified supplements.'],
+  ['How often should I rescan?', 'Every 30–60 days to see your trend.'],
+  ['Can I get scanned for free?', <>Yes. <a href="#book">Book a free scan with me.</a></>],
+  ['Do I need to buy anything?', 'No purchase is required for a scan.'],
 ]
 
 function PrysmPage() {
@@ -147,14 +200,14 @@ function PrysmPage() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-glow" aria-hidden="true" />
         <div className="hero-copy reveal">
-          <div className="eyebrow"><span /> TRULY INTELLIGENT WELLNESS</div>
-          <h1>YOUR BODY.<br /><em>IN FOCUS.</em></h1>
-          <p className="hero-lead">A fifteen-second wellness scan that turns the nutrients in your skin into a score you can act on.</p>
-          <p className="hero-note">Prysm iO™ measures skin carotenoid levels—your real-time antioxidant status, backed by more than twenty years of science.</p>
+          <div className="eyebrow"><span /> SPECTRAL RAI TECHNOLOGY</div>
+          <h1 className="hero-title">KNOW YOUR BODY.<br /><em>PROOF, NOT PROMISES.</em></h1>
+          <p className="hero-lead">Prysm iO™ measures your skin carotenoid levels in just 15 seconds — giving you a real-time antioxidant score backed by 20+ years of science.</p>
+          <p className="hero-note">Your wellness partner. Jennifer Kate — Truly Intelligent Wellness.</p>
           <div className="hero-actions">
             <button className="button-primary" onClick={() => scrollTo('#family-wellness')}>For moms & families <ArrowRight size={14} /></button>
             <button className="button-secondary" onClick={() => scrollTo('#business-opportunity')}>For wellness professionals <ArrowRight size={14} /></button>
-            <a className="button-secondary" href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">Buy your PRYSM iO <ArrowRight size={14} /></a>
+            <button className="button-secondary" onClick={() => scrollTo('#get-yours')}>Get yours today <ArrowRight size={14} /></button>
           </div>
         </div>
 
@@ -175,7 +228,7 @@ function PrysmPage() {
         <div className="hero-stats">
           <div><strong>15</strong><span>SEC / SCAN TIME</span></div>
           <div><strong>20+</strong><span>YRS / RESEARCH</span></div>
-          <div><strong>43%</strong><span>AVG / SCORE LIFT</span></div>
+          <div><strong>43%</strong><span>AVG / SCORE INCREASE</span></div>
         </div>
       </section>
 
@@ -241,19 +294,58 @@ function PrysmPage() {
             <button className="button-primary" onClick={() => scrollTo('#contact')}>Ask about the business path <ArrowRight size={14} /></button>
           </div>
         </div>
-        <p className="family-disclosure">Business participation is optional. Earnings are not guaranteed; results depend on individual effort and other factors.</p>
+
+        <div className="business-steps-head">
+          <span className="micro-label">START YOUR PRYSM iO BUSINESS</span>
+          <h3>Love your score? Share it with others.</h3>
+          <p>Here’s how to start scanning with me.</p>
+        </div>
+        <div className="business-steps">
+          <article>
+            <span>01</span>
+            <h4>Talk to me first.</h4>
+            <p>Ask questions and see if it fits your life.</p>
+            <button className="text-link" onClick={() => scrollTo('#contact')}>Talk to Jennifer <ArrowRight size={13} /></button>
+          </article>
+          <article>
+            <span>02</span>
+            <h4>Join as a Nu Skin Brand Affiliate under my team.</h4>
+            <p className="sponsor-id">Sponsor: REMIKATE COLLECTIVE LLC<br />Sponsor ID: US02592629</p>
+            <a className="text-link" href={affiliateSignupUrl} target="_blank" rel="noopener noreferrer">Get my signup link <ArrowRight size={13} /></a>
+          </article>
+          <article>
+            <span>03</span>
+            <h4>Get your Prysm <span className="io">iO</span>.</h4>
+            <p>Every Prysm iO purchase comes with free gifts: a Supplement Discovery Sample Box (Nu Biome, Collagen+, M-Smart, Colostrum Defense, LifePak Nano, and G3 samples) plus a printed Prysm iO catalog.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h4>Get Prysm <span className="io">iO</span> certified.</h4>
+            <p>Complete Nu Skin’s certification training.</p>
+          </article>
+          <article>
+            <span>05</span>
+            <h4>Start scanning.</h4>
+            <p>Friends, family, gyms, spas, and events.</p>
+          </article>
+        </div>
+        <div className="addons-line">
+          <strong>Helpful add-ons:</strong> {accessories.map(([name, price]) => `${name} (${price})`).join(' · ')}
+          <button className="text-link" onClick={() => scrollTo('#get-yours')}>See accessories in the shop <ArrowRight size={13} /></button>
+        </div>
+        <p className="family-disclosure">I’m an independent Nu Skin Brand Affiliate. Business participation is optional. Income is not guaranteed; results depend on your own effort and other factors. <a href={opportunityUrl} target="_blank" rel="noopener noreferrer">See Nu Skin’s official opportunity details.</a></p>
       </section>
 
       <section className="section" id="what-it-does">
         <SectionIntro kicker="WHAT IT DOES" title={<>KNOW IF YOUR<br /><em>ROUTINE IS WORKING.</em></>}>
-          You deserve to know—not just hope. Prysm iO™ measures carotenoid nutrient levels in your skin, a trusted biomarker correlated with healthy aging.
+          You deserve to know — not just hope. Prysm iO™ measures carotenoid nutrient levels in your skin, a trusted biomarker correlated with healthy aging.
         </SectionIntro>
 
         <div className="signal-flow">
           {[
-            ['INPUT_', 'Your finger', 'Clean, dry, and placed over the lens for fifteen seconds.'],
-            ['PROCESS_', 'Spectral Rai™', '200,000+ hyperspectral measurements analyzed with AI.'],
-            ['OUTPUT_', 'Your Prysm Score', 'A real-time antioxidant score without needles or discomfort.'],
+            ['INPUT_', 'Your finger', 'Place the pad of your index finger on the lens. Clean, dry, 15 seconds.'],
+            ['PROCESS_', 'Spectral Rai™', '700,000+ hyperspectral absorption measurements analyzed by AI referencing Raman technology.'],
+            ['OUTPUT_', 'Your Prysm Score', 'A real-time antioxidant score correlated with healthy aging — no blood test, no discomfort.'],
           ].map(([tag, title, copy], index) => (
             <article key={tag}>
               <span>{tag}</span><h3>{title}</h3><p>{copy}</p>
@@ -266,16 +358,20 @@ function PrysmPage() {
           <div>
             <span className="micro-label">UNDERSTANDING_CAROTENOIDS</span>
             <h3>THE ANTIOXIDANT<br />YOUR BODY IS CRAVING</h3>
-            <p>Carotenoids are powerful antioxidants found in colorful fruits and vegetables. They help neutralize free radicals, support healthy aging, and provide a measurable signal of nutritional status.</p>
+            <p>Carotenoids are powerful antioxidants found in colorful fruits and vegetables. They help protect your body by neutralizing harmful free radicals — the biggest drivers of aging. Eating colorful fruits and vegetables can help raise your carotenoid levels.</p>
           </div>
           <div className="mini-grid">
-            <div><ShieldCheck /><span>Immune support</span></div>
-            <div><Eye /><span>Eye & skin health</span></div>
-            <div><Sparkles /><span>Healthy aging</span></div>
+            <div><ShieldCheck /><span>Antioxidant support</span></div>
+            <div><Carrot /><span>Colorful nutrition</span></div>
+            <div><Sparkles /><span>Healthy habits</span></div>
             <div><Dna /><span>Oxidative defense</span></div>
           </div>
         </div>
 
+        <div className="explorer-head">
+          <span className="micro-label">WHY YOU’LL LOVE IT</span>
+          <h3>Intelligence meets simplicity.</h3>
+        </div>
         <div className="benefit-explorer">
           <div className="benefit-list">
             {benefits.map((benefit, index) => (
@@ -298,50 +394,157 @@ function PrysmPage() {
           <img src="/images/prysm-device.png" alt="A glowing violet prism representing the Prysm iO scanner" />
           <div className="image-code">DEVICE / 01<br />OPTICAL WELLNESS SENSOR</div>
         </div>
-        <SectionIntro kicker="HOW IT WORKS" title={<>SIMPLICITY.<br /><em>PROVE IT.</em></>}>
+        <SectionIntro kicker="HOW IT WORKS" title={<>FOUR STEPS.<br /><em>15 SECONDS.</em></>}>
           No appointments. No blood draws. No waiting. Your antioxidant status, on demand.
         </SectionIntro>
         <div className="steps">
-          {scanSteps.map(([number, title, detail]) => (
+          {scanSteps.map(({ number, title, detail, note, Icon }) => (
             <article key={number}>
-              <span>{number}</span><Fingerprint /><h3>{title}</h3><p>{detail}</p>
+              <span>{number}</span><Icon /><h3>{title}</h3><p>{detail}</p>
+              {note && <p className="step-note">{note}</p>}
             </article>
           ))}
         </div>
-        <div className="scan-tip"><span>SCAN_PROTOCOL</span><p>Wash and dry hands, cover the lens fully, and avoid moving during the fifteen-second scan.</p></div>
+        <div className="best-practices">
+          <span>BEST_PRACTICES<br />FOR_ACCURATE_SCANS</span>
+          <ul>
+            {bestPractices.map((tip) => <li key={tip}>{tip}</li>)}
+          </ul>
+        </div>
       </section>
 
-      <section className="section science-section" id="science">
-        <SectionIntro kicker="THE SCIENCE" title={<>DATA, NOT<br /><em>GUESSWORK.</em></>}>
-          A research platform engineered to turn complex optical signals into a simple, repeatable wellness score.
+      <section className="section score-section" id="your-score">
+        <SectionIntro kicker="READ YOUR SCORE" title={<>WHAT YOUR SCORE<br /><em>IS TELLING YOU.</em></>}>
+          Carotenoids are antioxidants your body can’t make on its own. You get them from colorful food like carrots, sweet potatoes, tomatoes, spinach, kale, peppers, and berries, or from supplements. Your Prysm iO score is one snapshot of the carotenoids in your skin. It reflects your habits over the last several weeks, not just yesterday.
         </SectionIntro>
-        <div className="science-grid">
-          <div className="study-card">
-            <span className="micro-label">CLINICAL_SIGNAL / 12_WEEKS</span>
-            <div className="study-number">46<span>%</span></div>
-            <h3>increase in skin carotenoid score</h3>
-            <p>Observed in a randomized, double-blind, placebo-controlled Nu Skin study of healthy adults after twelve weeks of supplementation.</p>
-            <div className="bar-chart" aria-label="Illustration of a 46 percent increase"><span /><span /></div>
+        <div className="score-grid">
+          <div className="score-scale">
+            <div className="score-scale-head"><span className="micro-label">SCORE RANGE</span><span className="micro-label">OF PEOPLE SCANNED</span></div>
+            {scoreRanges.map(([label, range, percent], index) => (
+              <div className="score-row" key={label}>
+                <strong>{label}</strong>
+                <small>{range}</small>
+                <div className="score-bar"><span style={{ width: `${(percent / 25) * 100}%`, opacity: 0.35 + index * 0.13 }} /></div>
+                <em>{percent}%</em>
+              </div>
+            ))}
+            <p className="score-note">Higher scores line up with daily supplements, 4+ servings of fruits and veggies, good sleep, no smoking, and regular exercise. Prysm iO is not a medical device.</p>
           </div>
-          <div className="technology-card">
-            <img src="/images/prysm-scan.png" alt="Visible spectrum light passing through a transparent prism" />
-            <div className="tech-list">
-              {[
-                ['200,000+', 'Hyperspectral absorption measurements'],
-                ['AI calibration', 'Algorithmic analysis referencing Raman technology'],
-                ['LED array', 'Optical controls designed for consistent readings'],
-                ['20+ years', 'Antioxidant science and measurement expertise'],
-              ].map(([label, detail]) => <div key={label}><strong>{label}</strong><span>{detail}</span></div>)}
+          <div className="score-lists">
+            <div>
+              <span className="micro-label">THINGS THAT CAN LOWER YOUR SCORE</span>
+              <ul className="check-list minus">
+                <li>Not many fruits and vegetables</li>
+                <li>Smoking or being around smoke</li>
+                <li>Lots of sun without protection</li>
+                <li>Stress and poor sleep</li>
+                <li>Heavy processed-food eating</li>
+              </ul>
+            </div>
+            <div>
+              <span className="micro-label">THINGS THAT CAN HELP RAISE IT</span>
+              <ul className="check-list">
+                <li>Eat more color every day</li>
+                <li>Add Prysm Certified supplements</li>
+                <li>Stay consistent</li>
+                <li>Re-scan in 30 to 60 days and watch your trend</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p className="family-disclosure">Your score is for wellness education. It is not a diagnosis or a medical test.</p>
+
+        <div className="eye-panel">
+          <div>
+            <span className="micro-label">EYE_HEALTH</span>
+            <h3>Carotenoids + your eyes.</h3>
+            <p>Two carotenoids, lutein and zeaxanthin, collect in the back of your eye in an area called the macula. That’s the part of your eye that handles sharp, center vision. They help filter blue light, including light from screens. Your body can’t make them.</p>
+            <p className="eye-disclaimer"><Eye size={14} /> Prysm iO measures skin carotenoids. It does not check your eyes or vision. See your eye doctor for any vision concerns.</p>
+          </div>
+          <div className="eye-lists">
+            <div>
+              <span className="micro-label">YOU GET THEM FROM</span>
+              <ul className="check-list dot">
+                <li>Spinach, kale, and collard greens</li>
+                <li>Egg yolks</li>
+                <li>Corn</li>
+                <li>Orange and yellow peppers</li>
+                <li>Supplements like Pharmanex Eye Formula</li>
+              </ul>
+            </div>
+            <div>
+              <span className="micro-label">GOOD FOR</span>
+              <ul className="check-list">
+                <li>Anyone on screens all day</li>
+                <li>People over 40</li>
+                <li>Anyone who doesn’t eat many leafy greens</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section supplement-section" id="supplements">
-        <SectionIntro kicker="PRYSM CERTIFIED" title={<>BUILT TO<br /><em>MOVE THE NEEDLE.</em></>}>
-          Products selected to support the nutritional pathways measured by your Prysm Score—so your routine has a result you can follow.
+      <section className="section science-section" id="science">
+        <SectionIntro kicker="THE SCIENCE" title={<>RESULTS THAT<br /><em>PROVE IT.</em></>}>
+          A research platform engineered to turn complex optical signals into a simple, repeatable wellness score.
         </SectionIntro>
-        <div className="supplement-grid">
+        <div className="science-grid">
+          <div className="study-card">
+            <span className="micro-label">CLINICAL_STUDY_RESULTS</span>
+            <div className="study-number">43<span>%</span></div>
+            <h3>Average score increase</h3>
+            <p>In a randomized, double-blind, placebo-controlled study by Nu Skin, 46 healthy adults ages 20–65 showed an average 43–46% increase in skin carotenoid scores after 12 weeks of supplementation.</p>
+            <div className="study-meta">
+              <div><strong>46</strong><span>participants</span></div>
+              <div><strong>12 WK</strong><span>study duration</span></div>
+            </div>
+            <div className="bar-chart" aria-label="Illustration of a 43 percent average increase"><span /><span /></div>
+          </div>
+          <div className="technology-card">
+            <img src="/images/prysm-scan.png" alt="Visible spectrum light passing through a transparent prism" />
+            <div className="tech-card-label"><span className="micro-label">SPECTRAL_RAI_TECHNOLOGY</span><strong>What powers it</strong></div>
+            <div className="tech-list">
+              {[
+                ['700,000+', 'Hyperspectral absorption measurements per scan'],
+                ['AI calibration', 'Algorithm driven by AI referencing Raman technology'],
+                ['LED array', 'Factors out biological markers that could interfere with your score'],
+                ['20+ years', 'Nu Skin leadership in antioxidant science & carotenoid measurement'],
+              ].map(([label, detail]) => <div key={label}><strong>{label}</strong><span>{detail}</span></div>)}
+            </div>
+          </div>
+        </div>
+
+        <div className="compare">
+          <div>
+            <span className="micro-label">PRYSM iO™ — NEW GENERATION</span>
+            <h3>PRYSM <span className="io">iO</span></h3>
+            <ul className="check-list">
+              <li>Spectral Rai Technology</li>
+              <li>Portable — no leasing</li>
+              <li>Faster 15-second scans</li>
+              <li>Fingertip scan</li>
+              <li>AI calibration</li>
+            </ul>
+          </div>
+          <div>
+            <span className="micro-label">BIOPHOTONIC SCANNER — LEGACY</span>
+            <h3>BioPhotonic Scanner</h3>
+            <ul className="check-list minus">
+              <li>Raman Spectroscopy</li>
+              <li>Requires leasing</li>
+              <li>Slower palm scan</li>
+              <li>Palm scan</li>
+              <li>20+ years validated</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="section supplement-section" id="supplements">
+        <SectionIntro kicker="PRYSM CERTIFIED" title={<>SUPPLEMENTS PROVEN<br /><em>TO RAISE YOUR SCORE.</em></>}>
+          Prysm Certified means Nu Skin’s scientists are confident this product will raise your Prysm Score over time. These are the products that move the needle.
+        </SectionIntro>
+        <div className="supplement-grid six">
           {supplements.map(([name, maker, tag, copy], index) => (
             <article key={name}>
               <div className="product-index">0{index + 1}</div>
@@ -350,15 +553,97 @@ function PrysmPage() {
             </article>
           ))}
         </div>
+        <div className="supplement-footer">
+          <p>More Prysm Certified products are in development.</p>
+          <button className="button-secondary" onClick={() => scrollTo('#contact')}>Ask Jennifer <ArrowRight size={14} /></button>
+        </div>
       </section>
 
-      
+      <section className="section shop-section" id="get-yours">
+        <SectionIntro kicker="GET YOURS" title={<>READY? GET YOUR<br /><em>PRYSM iO TODAY.</em></>}>
+          Order straight from my Nu Skin shop. It ships right to your door, and I’m here to help you read your score and pick your next step.
+        </SectionIntro>
+        <div className="shop-grid">
+          <article className="shop-card featured">
+            <span className="shop-badge">MOST POPULAR</span>
+            <h3>PRYSM <span className="io">iO</span> + Healthy Habits Bundle</h3>
+            <p>The scanner plus the daily nutrition that’s made to move your score. Set your supplements to subscription and save every month.</p>
+            <a className="button-primary" href={prysmBundleUrl} target="_blank" rel="noopener noreferrer">Buy the bundle <ArrowRight size={14} /></a>
+          </article>
+          <article className="shop-card">
+            <span className="micro-label">JUST THE DEVICE</span>
+            <h3>PRYSM <span className="io">iO</span> Scanner</h3>
+            <span className="shop-price">$375 retail</span>
+            <p>Just the device. Scan anytime, anywhere, and track your score in the app.</p>
+            <a className="button-secondary" href={prysmBuyUrl} target="_blank" rel="noopener noreferrer">Buy the scanner <ArrowRight size={14} /></a>
+          </article>
+        </div>
+        <div className="shop-extras">
+          <div>
+            <span className="micro-label"><Gift size={12} /> FREE GIFT</span>
+            <h3>Sample box + catalog</h3>
+            <p>Every Prysm iO purchase includes a Supplement Discovery Sample Box (Collagen+, Nu Biome, LifePak Nano, G3, M-Smart, Colostrum Defense) plus a printed Prysm catalog.</p>
+          </div>
+          <div>
+            <span className="micro-label">ACCESSORIES</span>
+            <ul className="accessory-list">
+              {accessories.map(([name, price]) => (
+                <li key={name}><a href={storefrontUrl} target="_blank" rel="noopener noreferrer"><span>{name}</span><em>{price} · Add to order <ArrowRight size={12} /></em></a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <span className="micro-label"><BadgeCheck size={12} /> GUARANTEE</span>
+            <h3>Prysm Certified Guarantee</h3>
+            <p>Take a Prysm Certified product (LifePak, Beauty Focus Collagen+, ageLOC Y-Span, Eye Formula, or G3) on a Nu Skin subscription for 60 days. If your Prysm Score doesn’t go up, Nu Skin will refund the product price. Shipping not included. Requirements apply.</p>
+            <a className="text-link" href={guaranteeUrl} target="_blank" rel="noopener noreferrer">See guarantee details <ArrowRight size={13} /></a>
+          </div>
+        </div>
+        <p className="family-disclosure">Products are sold through Nu Skin. I’m an independent Nu Skin Brand Affiliate. The guarantee covers Prysm Certified products, not the scanner itself.</p>
+      </section>
+
+      <section className="section book-section" id="book">
+        <SectionIntro kicker="BOOK A SCAN" title={<>BRING PRYSM iO<br /><em>TO YOU.</em></>}>
+          Want your own score, or want to share this with your people? I do free 15-second scans one-on-one and at pop-up events: gyms, spas, churches, small businesses, and groups.
+        </SectionIntro>
+        <div className="book-grid">
+          <article><span>01</span><h3>Get your score</h3><p>Meet up with me for a quick, free scan and talk through your results.</p></article>
+          <article><span>02</span><h3>Host a scan event</h3><p>Bring a free scan pop-up to your business or group. I bring the scanner; you bring the people.</p></article>
+          <article><span>03</span><h3>Book a call</h3><p>Have questions first? Let’s talk.</p></article>
+        </div>
+        <div className="book-actions">
+          <a className="button-primary" href={bookScanUrl} target="_blank" rel="noopener noreferrer">Book a scan or event <ArrowRight size={14} /></a>
+          <button className="button-secondary" onClick={() => scrollTo('#contact')}>Send me a question <ArrowRight size={14} /></button>
+        </div>
+        <p className="family-disclosure">PRYSM iO scans are for wellness education only. They do not diagnose, treat, or prevent any disease.</p>
+      </section>
+
+      <section className="section faq-section" id="faq">
+        <SectionIntro kicker="FAQ" title={<>QUESTIONS,<br /><em>ANSWERED.</em></>}>
+          Quick answers to what people ask me most.
+        </SectionIntro>
+        <div className="faq-list">
+          {faqs.map(([question, answer]) => (
+            <details key={question}>
+              <summary>{question}<Plus size={20} /></summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
 
       <section className="contact-section" id="contact">
         <div className="contact-copy">
           <span className="micro-label">PERSONAL WELLNESS GUIDANCE</span>
-          <h2>LET’S MAKE YOUR<br /><em>NEXT MOVE</em> MEASURABLE.</h2>
+          <h2>START YOUR<br /><em>WELLNESS</em> SCAN.</h2>
           <p>Ask Jennifer about PRYSM iO, choosing a routine, or adult scan options.</p>
+          <div className="contact-data">
+            <div><span>CONSULTANT</span><strong>Jennifer Kate</strong><small>Truly Intelligent Wellness</small></div>
+            <div><span>DIRECT LINE</span><a href={phoneHref}>{phoneDisplay}</a></div>
+            <div><span>EMAIL</span><a href={`mailto:${email}`}>{email}</a></div>
+            <div><span>MY LOCAL TIME</span><LocalTime /></div>
+          </div>
+          <blockquote className="contact-quote"><p>“Ask me how 15 seconds can change your life.”</p><small>— JENNIFER KATE</small></blockquote>
           <div className="contact-signature"><span>JK</span><div><strong>Jennifer Kate</strong><small>Independent Nu Skin Brand Affiliate</small></div></div>
         </div>
 
@@ -384,6 +669,7 @@ function PrysmPage() {
               <label><span>WHAT ARE YOU INTERESTED IN?</span><select name="interest" required defaultValue="">
                 <option value="" disabled>Choose one</option>
                 <option value="Learn about the PRYSM iO device">Learning about the PRYSM iO device</option>
+                <option value="Requesting a free scan">Booking a free scan or scan event</option>
                 <option value="Questions about using PRYSM iO with my family">Questions about using PRYSM iO with my family</option>
                 <option value="Buying my own device">Buying my own device</option>
                 <option value="Wellness business opportunity">Wellness business opportunity</option>
@@ -402,12 +688,27 @@ function PrysmPage() {
       </section>
 
       <footer>
-        <div><strong>PRYSM iO</strong><span>TRULY INTELLIGENT WELLNESS</span></div>
-        <p>Powered by 20+ years of antioxidant research and carotenoid measurement science.</p>
+        <div>
+          <strong>PRYSM iO</strong>
+          <span>TRULY INTELLIGENT WELLNESS</span>
+          <span className="footer-contact"><a href={phoneHref}>{phoneDisplay}</a> · <a href={`mailto:${email}`}>{email}</a></span>
+        </div>
+        <p>Powered by 20+ years of antioxidant research and patent-pending Spectral Rai Technology. By Nu Skin / Pharmanex.<small>© 2026 Jennifer Kate · Independent Nu Skin Brand Affiliate. Prysm iO is a trademark of Nu Skin.</small></p>
         <button onClick={() => scrollTo('#top')}>BACK TO TOP <ArrowDown size={13} /></button>
       </footer>
     </main>
   )
+}
+
+function LocalTime() {
+  const [time, setTime] = useState('')
+  useEffect(() => {
+    const update = () => setTime(new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York', timeZoneName: 'short' }).format(new Date()))
+    update()
+    const timer = window.setInterval(update, 30000)
+    return () => window.clearInterval(timer)
+  }, [])
+  return <strong>{time || 'Eastern Time'}</strong>
 }
 
 function SectionIntro({ kicker, title, children }: { kicker: string; title: React.ReactNode; children: React.ReactNode }) {
